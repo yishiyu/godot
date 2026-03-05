@@ -25,6 +25,9 @@
 /custom.py
 misc/hooks/pre-commit-custom-*
 
+# SCons cache directory
+.scons_cache/
+
 #############################
 ### Godot generated files ###
 #############################
