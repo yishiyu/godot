@@ -1,0 +1,163 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		// ========== Standard Editor - Run Mode ==========
+		{
+			"name": "Run Editor",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/bin/godot.windows.editor.x86_64.exe",
+			"args": ["--editor"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"console": "integratedTerminal",
+			"preLaunchTask": "Build Godot (Editor - Standard)"
+		},
+		{
+			"name": "Run Editor (Open Specified Project)",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/bin/godot.windows.editor.x86_64.exe",
+			"args": ["--path", "${input:projectPath}", "--editor"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"console": "integratedTerminal",
+			"preLaunchTask": "Build Godot (Editor - Standard)"
+		},
+		// ========== Standard Editor - Debug Mode ==========
+		{
+			"name": "Debug Editor",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/bin/godot.windows.editor.x86_64.exe",
+			"args": ["--editor", "--verbose"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"console": "integratedTerminal",
+			"preLaunchTask": "Build Godot (Editor - Standard)"
+		},
+		{
+			"name": "Debug Editor (Open Specified Project)",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/bin/godot.windows.editor.x86_64.exe",
+			"args": ["--path", "${input:projectPath}", "--editor", "--verbose"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"console": "integratedTerminal",
+			"preLaunchTask": "Build Godot (Editor - Standard)"
+		},
+		// ========== Mono Editor - Run Mode ==========
+		{
+			"name": "Run Editor (Mono)",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/bin/godot.windows.editor.x86_64.mono.exe",
+			"args": ["--editor"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [
+				{
+					"name": "DOTNET_CLI_TELEMETRY_OPTOUT",
+					"value": "1"
+				}
+			],
+			"console": "integratedTerminal",
+			"preLaunchTask": "Build Godot (Editor - Mono)"
+		},
+		{
+			"name": "Run Editor (Mono) (Open Specified Project)",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/bin/godot.windows.editor.x86_64.mono.exe",
+			"args": ["--path", "${input:projectPath}", "--editor"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [
+				{
+					"name": "DOTNET_CLI_TELEMETRY_OPTOUT",
+					"value": "1"
+				}
+			],
+			"console": "integratedTerminal",
+			"preLaunchTask": "Build Godot (Editor - Mono)"
+		},
+		// ========== Mono Editor - Debug Mode ==========
+		{
+			"name": "Debug Editor (Mono)",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/bin/godot.windows.editor.x86_64.mono.exe",
+			"args": ["--editor", "--verbose"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [
+				{
+					"name": "DOTNET_CLI_TELEMETRY_OPTOUT",
+					"value": "1"
+				}
+			],
+			"console": "integratedTerminal",
+			"preLaunchTask": "Build Godot (Editor - Mono)"
+		},
+		{
+			"name": "Debug Editor (Mono) (Open Specified Project)",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/bin/godot.windows.editor.x86_64.mono.exe",
+			"args": ["--path", "${input:projectPath}", "--editor", "--verbose"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [
+				{
+					"name": "DOTNET_CLI_TELEMETRY_OPTOUT",
+					"value": "1"
+				}
+			],
+			"console": "integratedTerminal",
+			"preLaunchTask": "Build Godot (Editor - Mono)"
+		},
+		// ========== Quick Run (No Build) ==========
+		{
+			"name": "Quick Run Editor (No Build)",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/bin/godot.windows.editor.x86_64.exe",
+			"args": ["--editor"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "Quick Run Editor (Mono) (No Build)",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/bin/godot.windows.editor.x86_64.mono.exe",
+			"args": ["--editor"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"console": "integratedTerminal"
+		},
+		// ========== Attach to Process ==========
+		{
+			"name": "Attach to Target Process",
+			"type": "cppvsdbg",
+			"request": "attach",
+			"processId": "${command:pickProcess}"
+		}
+	],
+	"inputs": [
+		{
+			"id": "projectPath",
+			"type": "promptString",
+			"description": "Enter Godot project path (e.g., G:/MyGodotProject)",
+			"default": ""
+		}
+	]
+}
